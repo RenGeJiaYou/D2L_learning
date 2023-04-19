@@ -1,0 +1,2 @@
+## 本项目是 [动手学深度学习（PyTorch版）](https://tangshusen.me/Dive-into-DL-PyTorch/#/)的学习记录
+而该教程又是`《动手学深度学习》(李沐 等)`一书源码的的 PyTorch 实现，原书在此：[Dive Into Deep Learning](https://zh.d2l.ai/chapter_installation/index.html)
