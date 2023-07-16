@@ -420,6 +420,7 @@ def download(name, cache_dir=os.path.join('..', 'data')):
     return fname
 
 
+# 下载网络压缩包、解压并返回解压后目录路径
 def download_extract(name, folder=None):
     """Download and extract a zip/tar file.
 
@@ -1686,6 +1687,7 @@ def train_ch13(net, train_iter, test_iter, loss, trainer, num_epochs,
     """Train a model with mutiple GPUs (defined in Chapter 13).
 
     Defined in :numref:`sec_image_augmentation`"""
+    print("train_ch13 starting...")
     timer, num_batches = d2l.Timer(), len(train_iter)
     animator = d2l.Animator(xlabel='epoch', xlim=[1, num_epochs], ylim=[0, 1],
                             legend=['train loss', 'train acc', 'test acc'])
@@ -2449,7 +2451,7 @@ class BERTEncoder(nn.Module):
     def forward(self, tokens, segments, valid_lens):
         # Shape of `X` remains unchanged in the following code snippet:
         # (batch size, max sequence length, `num_hiddens`)
-        X = self.token_embedding(tokens) + self.segment_embedding(segments)
+        X = self.token_seembedding(tokens) + self.segment_embedding(segments)
         X = X + self.pos_embedding.data[:, :X.shape[1], :]
         for blk in self.blks:
             X = blk(X, valid_lens)
